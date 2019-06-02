@@ -1,0 +1,13 @@
+@function fontcolors($name) {
+	
+	@if map-has-key($fonts-colors,$name) {
+		@return map-get($fonts-colors,$name); 
+	}
+	
+} 
+
+@function bgColors($name) {
+	@if map-has-key($bg-colors,$name) {
+		@return map-get($bg-colors,$name);
+	}
+}

@@ -1,0 +1,244 @@
+@import "colors";
+@import "funcions";
+
+$mainfont: 'Merriweather', serif;
+$weightPelement: 400; 
+$weightHelement: 400;
+$transition: 0.3s; 
+$fontArial: 'Arial';
+$indet: -9999px;
+
+@mixin mobile950 {
+	@media only screen and (max-width: 950px) {
+		@content;
+	}
+}
+@mixin mobileMD {
+	@media only screen and (max-width: 748px) {
+		@content;
+	}
+}
+@mixin mobile450 {
+	@media only screen and (max-width: 450px) {
+		@content;
+	}
+}
+
+body {
+	font-family: $mainfont;
+}
+p {
+	font-weight: $weightPelement;
+	margin-bottom: 15px;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight: $weightHelement;
+}
+a {
+	transition: $transition;
+	text-decoration: none !important;
+}
+.btn {
+	background-color: bgColors(elementsColor) !important; 
+	border-radius: 10px !important;
+	&:hover {
+		background-color: bgColors(elementsHover) !important;
+	}
+}
+
+/*header*/
+#header_area {
+	border-top: 5px solid bgColors(elementsColor);
+	border-bottom: 1px solid bgColors(elementsColor2);
+	padding-top: 20px;
+
+	.social-media > ul > li > a {
+		width: 35px;
+		height: 35px;
+		padding: 5px;
+		&:hover {
+			background-color: bgColors(elementsHover) !important;
+		}
+	}
+	.logo {
+		margin-top: 20px;
+	} 
+	.search-area input[type='text'] {
+		border-radius: 6px;
+	}
+	#main-menu {
+		padding-top: 40px;
+	}
+	@include mobile950 {
+		#main-menu ul li a {
+			font-size: 12px !important;
+		}
+	}
+}
+
+/* banners */
+#banner-area {
+	overflow: hidden !important;
+	
+		img {
+			height: auto !important;
+		}
+		.banner-textarea {
+			top: 20%;
+			left: 0;
+		}
+		.bx-wrapper .bx-pager {
+		    text-align: right;
+		    font-size: .85em;
+		    font-family: $fontArial;
+		    font-weight: $weightPelement;
+		    padding-top: 20px;
+		}
+		.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+		    position: absolute;
+		    bottom: 30px;
+		    width: 100%;
+		}
+		 .bx-wrapper .bx-pager.bx-default-pager a {
+		    background: #3bafbe;
+		    text-indent: $indet;
+		    display: block;
+		    width: 20px;
+		    height: 20px;
+		    margin: 0 5px;
+		    outline: 0;
+		    -moz-border-radius: 50%;
+		    -webkit-border-radius: 50%;
+		    border-radius: 50%;
+		}
+		.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
+		    background: bgColors(whiteColor);
+		    border: 3px solid bgColors(elementsColor);
+		}
+}
+
+main {
+	
+	.beside-text {
+		left: 0;
+		top: 0;
+
+		.text-content {
+			
+			width: 65% !important;
+
+			p {
+				font-size: 13px;
+			}
+			h6 {
+				color: #3bafbe;
+			}
+		}
+	}
+}
+
+/* footer */
+
+footer {
+	padding-bottom: 0 !important;
+	
+	.details p {
+		white-space: pre-line;
+	}
+	.details p span, .list-group-item a {
+		color: #3bafbe;
+	}
+	#footer {
+		min-height: 50px;
+		line-height: 49px;
+		background-color: #000 !important;
+		font-size: 14px;
+	}
+}
+
+@include mobileMD {
+	#main-menu {
+		padding-top: 0px;
+	}
+	
+	.banner-textarea {
+		top: 5%;
+
+		.btn {
+			font-size: 12px !important;
+			padding: 2px 5px !important;
+			margin: 0;
+		}
+
+		.banner-text {
+			h2 {
+				font-size: 13px;
+			}
+			p {
+				font-size: 12px;
+			}
+		}
+	}
+		
+	.text-content {
+		h6 {
+			font-size: 12px;
+		}
+	 	p {
+			font-size: 11px;
+		}
+	}
+
+	.bx-wrapper .bx-pager {
+		text-align: center !important;		
+	}
+	.bx-wrapper .bx-pager.bx-default-pager a {
+	    width: 10px !important;
+	    height: 10px !important;    
+	}
+	.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+	   bottom: -20px !important;    
+	}
+	.bx-wrapper .bx-controls-direction a {
+	    position: absolute;
+	   	top: 110%;
+	    margin-top: -16px;
+	    outline: 0;
+	    width: 32px;
+	    height: 32px;
+	    text-indent: -9999px;
+	    z-index: 9999;
+	}
+	.bx-wrapper .bx-controls-direction .bx-prev {
+		left: -2%;
+	}
+	.bx-wrapper .bx-controls-direction .bx-next {
+		right: -2%;
+	}
+}
+
+@include mobile450 {
+	
+	.banner-textarea {
+		top: 2% !important;
+		.banner-text {
+			h2 {
+				font-size: 10px;
+			}
+			p {
+				font-size: 9px;
+			}
+		}
+	}
+	
+	footer {
+		input[type='submit'] {
+			font-size: 12px !important;
+			padding: 4px 8px !important;
+		}
+		#footer {
+			font-size: 12px;
+			line-height: 20px;
+		}
+	}	
+} 
