@@ -69,11 +69,6 @@ a {
 	#main-menu {
 		padding-top: 40px;
 	}
-	@include mobile950 {
-		#main-menu ul li a {
-			font-size: 12px !important;
-		}
-	}
 }
 
 /* banners */
@@ -84,7 +79,7 @@ a {
 			height: auto !important;
 		}
 		.banner-textarea {
-			top: 20%;
+			top: 15%;
 			left: 0;
 		}
 		.bx-wrapper .bx-pager {
@@ -156,12 +151,11 @@ footer {
 	}
 }
 
-@include mobileMD {
-	#main-menu {
-		padding-top: 0px;
-	}
-	
-	.banner-textarea {
+@include mobile950 {
+		#main-menu ul li a {
+			font-size: 12px !important;
+		}
+		.banner-textarea {
 		top: 5%;
 
 		.btn {
@@ -178,6 +172,12 @@ footer {
 				font-size: 12px;
 			}
 		}
+	}
+	}
+
+@include mobileMD {
+	#main-menu {
+		padding-top: 0px;
 	}
 		
 	.text-content {
